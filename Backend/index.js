@@ -57,6 +57,10 @@ app.get('/MULTIPLICACION/:NUMERO/:NUMERO2', (req, res) => {
     res.send({ state: true,  result: Number(req.params.NUMERO) * Number(req.params.NUMERO2) })
 })
 
+app.get('/DIVISION/:NUMERO/:NUMERO2', (req, res) => {
+    res.send({ state: true,  result: Number(req.params.NUMERO) / Number(req.params.NUMERO2) })
+})
+
 app.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`)
 })

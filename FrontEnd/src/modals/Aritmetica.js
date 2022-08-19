@@ -60,15 +60,15 @@ function Aritmetica(props) {
                                         value="1"
                                         onChange={(e) => setOperacion(e.target.value)}                             
                                     />
-                                    {/*<Form.Check*/}
-                                    {/*    inline*/}
-                                    {/*    label="División"*/}
-                                    {/*    name="group1"*/}
-                                    {/*    type="radio"*/}
-                                    {/*    id="radio2"*/}
-                                    {/*    value="2"*/}
-                                    {/*    onChange={(e) => setOperacion(e.target.value)}*/}
-                                    {/*/>*/}
+                                    <Form.Check
+                                        inline
+                                        label="División"
+                                        name="group1"
+                                        type="radio"
+                                        id="radio2"
+                                        value="2"
+                                        onChange={(e) => setOperacion(e.target.value)}
+                                    />
                                 </Col>
                                 <Col></Col>
                             </Row>
@@ -130,7 +130,14 @@ async function cargarDatos(data) {
     }).then((data) => data.json());
     }
     else {
-        return {state:true, result:a /b };
+        return fetch("http://localhost:3000/DIVISION/"+parseInt(a)+"/"+parseInt(b), {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        }).then((data) => data.json());
+    
     }
     
 }
