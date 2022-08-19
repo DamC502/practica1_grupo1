@@ -45,6 +45,10 @@ app.get('/ALREVEZ/:PALABRA', (req, res) => {
     res.send({ state: true, result: req.params.PALABRA.split("").reverse().join("") })
 })
 
+app.get('/potencia/:NUMERO', (req, res) => {
+    res.send({ state:true, result: Math.pow(Number(req.params.NUMERO), 3) })
+})
+
 app.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`)
 })
