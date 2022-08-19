@@ -1,6 +1,7 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
-
+app.use(cors())
 const host = 'localhost';
 const port = 3000
 
@@ -34,10 +35,14 @@ app.get('/PAROIMPAR/:NUMERO', (req, res) => {
 
 app.get('/fibo/:NUMERO', (req, res) => {
 
-    const fib = function (n) {
-        if (n <= 1) return n;
-        return fib(n - 1) + fib(n - 2);
-    }
+    const fib = function(n) {
+        const sol = [0, 1];
+    
+        for (let i = 2; i<= n; i++) {
+            sol[i] = sol[i -1] + sol[i - 2];
+        }
+        return sol[n];
+    };
     res.send({state:true, result: fib(req.params.NUMERO) })
 })
 
