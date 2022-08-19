@@ -107,22 +107,22 @@ async function cargarDatos(data) {
 
     const {op,num}=data;
     if (op ==1){
-        return fetch("http://localhost:3000/potencia/"+num, {
+        return fetch("http://localhost:3000/potencia/"+parseInt(num) , {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
+            //body: JSON.stringify(data),
         }).then((data) => data.json());
         // return {state:true, result:Math.pow(num,3)};
     }
     else {
-        return fetch("http://localhost:3000/raiz/"+num, {
+        return fetch("http://localhost:3000/raiz/"+parseInt(num), {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
+            //body: JSON.stringify(data),
         }).then((data) => data.json());
         //return {state:true, result:Math.cbrt(num)};
     }
