@@ -3,11 +3,13 @@ import {Col, Container, Row, ListGroup, ListGroupItem} from "react-bootstrap";
 import ModalInfoGeneral from '../modals/InfoGeneral.js';
 import ModalNumeroPar_Impar from '../modals/Numero_par_impar.js';
 import ModalCubica from '../modals/Cubica.js';
+import ModalFibonacci from '../modals/Fibonacci.js';
 
 function Home(props) {
     const [showCubica, setShowCubica] = useState(false);
     const [showInfoGeneral, setShowInfoGeneral] = useState(false);
     const [showNumeroPar, setShowNumeroPar] = useState(false);
+    const [showFibonacci, setShowFibonacci] = useState(false);
     // Damihan
 
     // Damihan
@@ -21,6 +23,9 @@ function Home(props) {
     }
     function handleCubica() {
         setShowCubica(showCubica ? false : true);
+    }
+    function handleFibonacci() {
+        setShowFibonacci(showFibonacci ? false : true);
     }
 
     return (
@@ -44,6 +49,10 @@ function Home(props) {
                             <ListGroupItem action onClick={() => handleCubica()} >
                                 Potencia al cubo y Raíz cúbica
                             </ListGroupItem>
+                            <ListGroupItem action onClick={() => handleFibonacci()} >
+                                Fibonacci de un número 
+                            </ListGroupItem>
+
                         </ListGroup>
                     </Col>
                 </Row>
@@ -51,6 +60,7 @@ function Home(props) {
                     <ModalInfoGeneral show={showInfoGeneral} setShow={setShowInfoGeneral}/>
                     <ModalNumeroPar_Impar show={showNumeroPar} setShow= {setShowNumeroPar}/>
                     <ModalCubica show={showCubica} setShow= {setShowCubica}/>
+                    <ModalFibonacci show={showFibonacci} setShow= {setShowFibonacci}/>
                 </Row>
             </Container>
         </>
