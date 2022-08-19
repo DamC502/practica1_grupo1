@@ -41,6 +41,22 @@ app.get('/fibo/:NUMERO', (req, res) => {
     res.send({state:true, result: fib(req.params.NUMERO) })
 })
 
+app.get('/ALREVEZ/:PALABRA', (req, res) => {
+    res.send({ state: true, result: req.params.PALABRA.split("").reverse().join("") })
+})
+
+app.get('/potencia/:NUMERO', (req, res) => {
+    res.send({ state:true, result: Math.pow(Number(req.params.NUMERO), 3) })
+})
+
+app.get('/raiz/:NUMERO', (req, res) => {
+    res.send({ state: true,  result: Math.sqrt(Number(req.params.NUMERO)) })
+})
+
+app.get('/MULTIPLICACION/:NUMERO/:NUMERO2', (req, res) => {
+    res.send({ state: true,  result: Number(req.params.NUMERO) * Number(req.params.NUMERO2) })
+})
+
 app.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`)
 })
