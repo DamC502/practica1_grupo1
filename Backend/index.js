@@ -41,6 +41,10 @@ app.get('/fibo/:NUMERO', (req, res) => {
     res.send({state:true, result: fib(req.params.NUMERO) })
 })
 
+app.get('/ALREVEZ/:PALABRA', (req, res) => {
+    res.send({ status: true, result: req.params.PALABRA.split("").reverse().join("") })
+})
+
 app.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`)
 })
