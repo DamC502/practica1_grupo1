@@ -63,7 +63,12 @@ app.get('/MULTIPLICACION/:NUMERO/:NUMERO2', (req, res) => {
 })
 
 app.get('/DIVISION/:NUMERO/:NUMERO2', (req, res) => {
-    res.send({ state: true,  result: Number(req.params.NUMERO) / Number(req.params.NUMERO2) })
+    if ( Number(req.params.NUMERO2)  != 0) {
+        res.send({ state: true,  result:  Number(req.params.NUMERO) / Number(req.params.NUMERO2) })
+    }else {
+        res.send({ state: true,  result:  "No se puede realizar una división dentro de 0" })
+    }    
+    
 })
 
 app.get('/SUMA/:NUMERO/:NUMERO2', (req, res) => {
