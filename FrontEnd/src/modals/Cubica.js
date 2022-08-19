@@ -53,17 +53,15 @@ function Pot_Raiz(props) {
                             <Row>
                                 <Col></Col>
                                 <Col className="mb-3" md="auto">
-                                    {/*<Form.Check*/}
-                                    {/*    inline*/}
-                                    {/*    label="Potencia al cubo"*/}
-                                    {/*    name="group1"*/}
-                                    {/*    type="radio"*/}
-                                    {/*    id="radio1"*/}
-                                    {/*    value="1"*/}
-                                    {/*    onChange={(e) => setOperacion(e.target.value)}*/}
-                                    {/*   */}
-                                    {/*                                         */}
-                                    {/*/>*/}
+                                    <Form.Check
+                                        inline
+                                        label="Potencia al cubo"
+                                        name="group1"
+                                        type="radio"
+                                        id="radio1"
+                                        value="1"
+                                        onChange={(e) => setOperacion(e.target.value)}                           
+                                    />
                                     <Form.Check
                                         inline
                                         label="Raiz Cubica"
@@ -119,7 +117,14 @@ async function cargarDatos(data) {
         // return {state:true, result:Math.pow(num,3)};
     }
     else {
-        return {state:true, result:Math.cbrt(num)};
+        return fetch("http://localhost:3000/raiz/"+num, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        }).then((data) => data.json());
+        //return {state:true, result:Math.cbrt(num)};
     }
     
 }
