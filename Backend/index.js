@@ -8,6 +8,10 @@ const datos= [
         {
             nombre:"Damihan Antonio Morales Cuyuch",   
             carnet:"201431457"
+        },
+        {
+            nombre:"Maynor Octavio Piló Tuy",
+            carnet:"201531166"
         }
     ]
 
