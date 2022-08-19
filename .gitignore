@@ -2,3 +2,7 @@
 Backend/node_modules/
 
 .vscode/
+
+FrontEnd/.idea/
+
+FrontEnd/node_modules/
