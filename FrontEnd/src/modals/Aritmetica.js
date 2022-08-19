@@ -121,12 +121,12 @@ async function cargarDatos(data) {
        
     const {op,a,b}=data; 
     if (op ==1){
-        return fetch("http://localhost:3000/"+parseInt(a)+"/"+parseInt(b), {
+        return fetch("http://localhost:3000/MULTIPLICACION/"+parseInt(a)+"/"+parseInt(b), {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        //body: JSON.stringify(data),
     }).then((data) => data.json());
     }
     else {
@@ -135,7 +135,7 @@ async function cargarDatos(data) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
+           // body: JSON.stringify(data),
         }).then((data) => data.json());
     
     }
