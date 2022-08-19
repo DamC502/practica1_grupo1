@@ -1,15 +1,17 @@
-import React, {useState} from "react";
-import {Col, Container, Row, ListGroup, ListGroupItem} from "react-bootstrap";
-import ModalInfoGeneral from '../modals/InfoGeneral.js';
-import ModalNumeroPar_Impar from '../modals/Numero_par_impar.js';
+import React, { useState } from "react";
+import { Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import ModalCubica from '../modals/Cubica.js';
 import ModalFibonacci from '../modals/Fibonacci.js';
+import ModalInfoGeneral from '../modals/InfoGeneral.js';
+import ModalStr from '../modals/Invertir.js';
+import ModalNumeroPar_Impar from '../modals/Numero_par_impar.js';
 
 function Home(props) {
     const [showCubica, setShowCubica] = useState(false);
     const [showInfoGeneral, setShowInfoGeneral] = useState(false);
     const [showNumeroPar, setShowNumeroPar] = useState(false);
     const [showFibonacci, setShowFibonacci] = useState(false);
+    const [showStr, setShowStr] = useState(false);
     // Damihan
 
     // Damihan
@@ -26,6 +28,9 @@ function Home(props) {
     }
     function handleFibonacci() {
         setShowFibonacci(showFibonacci ? false : true);
+    }
+    function handleStr() {
+        setShowStr(showStr ? false : true);
     }
 
     return (
@@ -52,7 +57,9 @@ function Home(props) {
                             <ListGroupItem action onClick={() => handleFibonacci()} >
                                 Fibonacci de un número 
                             </ListGroupItem>
-
+                            <ListGroupItem  action onClick={() => handleStr()} >
+                                Invertir Palabra
+                            </ListGroupItem>
                         </ListGroup>
                     </Col>
                 </Row>
@@ -61,6 +68,7 @@ function Home(props) {
                     <ModalNumeroPar_Impar show={showNumeroPar} setShow= {setShowNumeroPar}/>
                     <ModalCubica show={showCubica} setShow= {setShowCubica}/>
                     <ModalFibonacci show={showFibonacci} setShow= {setShowFibonacci}/>
+                    <ModalStr show={showStr} setShow= {setShowStr}/>
                 </Row>
             </Container>
         </>
