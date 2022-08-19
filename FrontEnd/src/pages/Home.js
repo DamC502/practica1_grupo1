@@ -6,6 +6,7 @@ import ModalInfoGeneral from '../modals/InfoGeneral.js';
 import ModalStr from '../modals/Invertir.js';
 import ModalNumeroPar_Impar from '../modals/Numero_par_impar.js';
 import ModalAritmetica from '../modals/Aritmetica.js';
+import ModalAritmetica2  from '../modals/Aritmetica2.js';
 
 function Home(props) {
     const [showCubica, setShowCubica] = useState(false);
@@ -14,15 +15,12 @@ function Home(props) {
     const [showFibonacci, setShowFibonacci] = useState(false);
     const [showStr, setShowStr] = useState(false);
     const [showAritmetica, setShowAritmetica] = useState(false);
+    const [showAritmetica2, setShowAritmetica2] = useState(false);
 
-    // Damihan
-
-    // Damihan
     function handleInfoGeneral() {
         setShowInfoGeneral(showInfoGeneral ? false : true);
     }
 
-    // Damihan
     function handleNumeroPar() {
         setShowNumeroPar(showNumeroPar ? false : true);
     }
@@ -38,6 +36,10 @@ function Home(props) {
 
     function handlearitmetica() {
         setShowAritmetica(showAritmetica ? false : true);
+    }
+
+    function handlearitmetica2() {
+        setShowAritmetica2(showAritmetica2 ? false : true);
     }
 
     return (
@@ -71,6 +73,10 @@ function Home(props) {
                             <ListGroupItem action onClick={() => handlearitmetica()} >
                                 Multiplicación y División
                             </ListGroupItem>
+
+                            <ListGroupItem action onClick={() => handlearitmetica2()} >
+                                Suma y Resta
+                            </ListGroupItem>
                         </ListGroup>
                     </Col>
                 </Row>
@@ -81,6 +87,7 @@ function Home(props) {
                     <ModalFibonacci show={showFibonacci} setShow= {setShowFibonacci}/>
                     <ModalStr show={showStr} setShow= {setShowStr}/>
                     <ModalAritmetica show={showAritmetica} setShow= {setShowAritmetica}/>
+                    <ModalAritmetica2 show={showAritmetica2} setShow= {setShowAritmetica2}/>
                 </Row>
             </Container>
         </>
