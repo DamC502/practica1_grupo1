@@ -12,7 +12,11 @@ const datos= [
         {
             nombre:"Maynor Octavio Piló Tuy",
             carnet:"201531166"
-        }
+        },
+        {
+            nombre:"José Diego Pérez Toralla",
+            carnet:"201504081"
+        },
     ]
 
 
