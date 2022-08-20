@@ -71,18 +71,19 @@ function Invertir(props) {
 }
 
 async function cargarDatos(data) {
-    /*return fetch("http://localhost:3000/", {
-        method: "POST",
+    const {str} = data;
+    return fetch("http://localhost:3000/ALREVEZ/"+str, {
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
-    }).then((data) => data.json());   */
+        //body: JSON.stringify(data),
+    }).then((data) => data.json());  
     
     // variable que contiene la palabra
-    const {str} = data;
+    
     //  respuesta
-    return {state:true, result:str};
+    //return {state:true, result:str};
 }
 
 export default Invertir;
